@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { SparklesIcon } from './icons';
 
@@ -8,11 +7,11 @@ const Header: React.FC = () => {
       <div className="flex items-center justify-center gap-4">
         <SparklesIcon className="w-10 h-10 text-yellow-500" />
         <h1 className="text-5xl font-handwriting text-purple-800">
-          Hungarian Poem Dream Weaver
+          Magyar Vers Álomszövő
         </h1>
         <SparklesIcon className="w-10 h-10 text-yellow-500" />
       </div>
-      <p className="text-purple-600 mt-2">Transforming verses into visual wonders.</p>
+      <p className="text-purple-600 mt-2">Versek átalakítása vizuális csodákká.</p>
     </header>
   );
 };

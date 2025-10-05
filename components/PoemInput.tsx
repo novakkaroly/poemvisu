@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { LoaderIcon, SparklesIcon } from './icons';
 
@@ -13,13 +12,13 @@ const PoemInput: React.FC<PoemInputProps> = ({ poem, setPoem, onGenerate, isLoad
   return (
     <div className="bg-white/60 p-6 rounded-xl shadow-lg backdrop-blur-sm border border-purple-200">
       <label htmlFor="poem-input" className="block text-lg font-semibold text-purple-700 mb-2">
-        Enter a Hungarian Poem
+        Írj be egy magyar verset
       </label>
       <textarea
         id="poem-input"
         value={poem}
         onChange={(e) => setPoem(e.target.value)}
-        placeholder="e.g., 'Föltámadott a tenger...'"
+        placeholder="pl. 'Föltámadott a tenger...'"
         rows={8}
         className="w-full p-4 border-2 border-mint-200 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-colors duration-300 resize-none bg-white/80"
         disabled={isLoading}
@@ -32,12 +31,12 @@ const PoemInput: React.FC<PoemInputProps> = ({ poem, setPoem, onGenerate, isLoad
         {isLoading ? (
           <>
             <LoaderIcon className="w-6 h-6" />
-            Weaving your dream...
+            Álmod szövése...
           </>
         ) : (
           <>
             <SparklesIcon className="w-6 h-6" />
-            Generate Dream Image
+            Álomkép Létrehozása
           </>
         )}
       </button>

@@ -1,5 +1,5 @@
 {
-  "name": "Hungarian Poem Dream Weaver",
-  "description": "A whimsical AI art generator that transforms Hungarian poetry into unique, dream-like images. Features include image generation, saving favorites, and sharing creations.",
+  "name": "Magyar Vers Álomszövő",
+  "description": "Egy szeszélyes MI művészeti generátor, amely a magyar költészetet egyedi, álomszerű képekké alakítja. A funkciók közé tartozik a képgenerálás, a kedvencek mentése és az alkotások megosztása.",
   "requestFramePermissions": []
 }

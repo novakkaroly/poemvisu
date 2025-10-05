@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { ArtCreation } from './types';
 import { useLocalStorage } from './hooks/useLocalStorage';
@@ -37,7 +36,7 @@ function App() {
       if (e instanceof Error) {
         setError(e.message);
       } else {
-        setError("An unknown error occurred.");
+        setError("Ismeretlen hiba történt.");
       }
     } finally {
       setIsLoading(false);
@@ -80,7 +79,7 @@ function App() {
         <FavoritesGallery favorites={favorites} onRemove={handleRemoveFavorite} />
       </main>
       <footer className="text-center py-4 text-purple-500 text-sm">
-        <p>Powered by Gemini. Crafted with whimsy.</p>
+        <p>Gemini hajtja. Szeszéllyel készült.</p>
       </footer>
     </div>
   );

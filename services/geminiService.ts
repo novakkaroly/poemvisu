@@ -1,4 +1,3 @@
-
 import { GoogleGenAI } from "@google/genai";
 
 const API_KEY = process.env.API_KEY;
@@ -9,9 +8,43 @@ if (!API_KEY) {
 
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
+// Stílustár a https://chaosbot.tizennegy.hu/kaoszkulcsok/mesterseges-rajzolas/stilusok-technikak-es-parancsok-prompt-gyujtemenye/ alapján
+const styleLibrary: string[] = [
+  'szürrealizmus',
+  'impresszionizmus',
+  'expresszionizmus',
+  'kubizmus',
+  'szecesszió (Art Nouveau)',
+  'barokk festészet',
+  'romantika',
+  'posztimpresszionizmus',
+  'szimbolizmus',
+  'japán fametszet',
+  'art deco',
+  'pop art',
+  'minimalista',
+  'pszichedelikus művészet',
+  'akvarell festmény',
+  'tusrajz',
+  'szénrajz',
+  'képregény stílus',
+  'mesekönyv illusztráció',
+  'digitális festmény',
+  'fantasy művészet',
+  'concept art',
+  'gőzpunk (steampunk)',
+  'pixel art',
+  'ólomüveg ablak',
+  'naiv művészet',
+  'kollázs',
+  'csöpögtetéses festészet (drip painting)'
+];
+
 export async function generateImageFromPoem(poem: string): Promise<string> {
   try {
-    const prompt = `Generate a whimsical, dream-like image in a soft pastel color scheme (lavender, mint green, pale gold). The style should be ethereal, magical, and painterly, directly inspired by the mood and imagery of the following Hungarian poetry: \n\n---\n\n${poem}`;
+    const randomStyle = styleLibrary[Math.floor(Math.random() * styleLibrary.length)];
+
+    const prompt = `Alkoss egy szeszélyes, álomszerű képet, amelyet közvetlenül az alábbi magyar vers hangulata és képi világa ihletett. A kép stílusa legyen: ${randomStyle}. \n\n---\n\n${poem}`;
 
     const response = await ai.models.generateImages({
         model: 'imagen-4.0-generate-001',
@@ -31,6 +64,6 @@ export async function generateImageFromPoem(poem: string): Promise<string> {
     }
   } catch (error) {
     console.error("Error generating image with Gemini API:", error);
-    throw new Error("Failed to create the dream image. Please try again.");
+    throw new Error("Nem sikerült létrehozni az álomképet. Kérlek, próbáld újra.");
   }
 }
